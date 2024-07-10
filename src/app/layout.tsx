@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br">
+      <body className={`${inter.className} bg-Light-pink`}>
+        <div className="relative h-screen">
+          <header>
+            <img src="assets/images/background-pattern-desktop.svg" alt="any" />
+          </header>
+          <div>{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
